@@ -1,0 +1,12 @@
+{
+  "name": "cb-resolve",
+  "version": "0.3.2",
+  "description": "Community Behaviors load-order resolution + .hky document API (havok-core-free).",
+  "homepage": "https://github.com/Cassieandstuff/Community-Behaviors",
+  "license": "GPL-3.0-or-later",
+  "dependencies": [
+    "ryml",
+    { "name": "vcpkg-cmake", "host": true },
+    { "name": "vcpkg-cmake-config", "host": true }
+  ]
+}
