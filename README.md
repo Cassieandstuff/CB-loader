@@ -7,21 +7,20 @@ load order identically to the CB compiler.
 
 ## Status: scaffold (not yet usable)
 
-Two things must land before this registry works end-to-end:
+Community-Behaviors is now **public**, so the port builds: it's pinned to CB **v0.3.2** (first version
+with install/export rules) with a real `vcpkg_from_github` SHA512. `find_package(cb-resolve)` →
+`cb::cb-resolve`.
 
-1. **Community-Behaviors must be reachable to vcpkg.** It's currently private; `vcpkg_from_github` needs
-   the repo public or a `GITHUB_TOKEN`. Until then the portfile's `SHA512` can't be finalized (it's a
-   placeholder). See `ports/cb-resolve/portfile.cmake`.
-2. **CB's license.** CB is currently **All Rights Reserved** (unreleased/proprietary), so the port's
-   `license` is `null` and this registry must not be published for third-party consumption yet. On
-   release CB becomes GPL-3.0 (+ a linking exception); at that point set the port `license` to the
-   matching SPDX id and enable `vcpkg_install_copyright`.
+**One constraint remains — do NOT publish this registry for third-party consumption.** Public ≠ open
+source: CB's LICENSE is **All Rights Reserved** (source-visible, no usage rights granted). This port is
+for the copyright holder's own / authorized use only. When CB is released under GPL-3.0 (+ a linking
+exception), set the port `license` to the matching SPDX id, enable `vcpkg_install_copyright` in the
+portfile, and only then promote this for open consumption.
 
-Right now the port itself is complete and pinned to CB **v0.3.2** (the first version with install/export
-rules). Once #1/#2 land: fill the SHA512, then `vcpkg x-add-version cb-resolve` to generate the
-`versions/` database that makes this a real registry.
+To make it a real versioned registry (rather than an overlay), run `vcpkg x-add-version cb-resolve`
+after committing the port, which generates the `versions/` database.
 
-## Consuming it (once finalized)
+## Consuming it (via vcpkg, once the versions DB exists)
 
 `vcpkg-configuration.json` in the consumer:
 ```json
@@ -39,8 +38,8 @@ rules). Once #1/#2 land: fill the SHA512, then `vcpkg x-add-version cb-resolve` 
 
 ## Meanwhile: FetchContent works today
 
-If you have repo access, you don't need this registry yet — consume CB directly (see
-CB's `docs/consuming-cb-resolve.md`):
+You don't need this registry yet — consume CB directly (CB is public; see
+CB's `docs/consuming-cb-resolve.md`). Note the All-Rights-Reserved license still applies:
 ```cmake
 FetchContent_Declare(community_behaviors
     GIT_REPOSITORY https://github.com/Cassieandstuff/Community-Behaviors.git

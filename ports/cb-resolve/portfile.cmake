@@ -1,21 +1,17 @@
 # cb-resolve — the Community Behaviors load-order resolution surface, built resolve-only
 # (no SKSE plugin / converter / CommonLibSSE). Consumers: find_package(cb-resolve) -> cb::cb-resolve.
 
-# ── BLOCKED until Community-Behaviors is reachable to vcpkg ─────────────────────────────────────
-#   • The repo is currently PRIVATE: vcpkg_from_github fetches the source TARBALL over HTTPS, which
-#     needs the repo public OR a GITHUB_TOKEN configured. The SHA512 below is a placeholder — fill it
-#     once the tag archive is fetchable:
-#         curl -sL https://github.com/Cassieandstuff/Community-Behaviors/archive/refs/tags/v0.3.2.tar.gz \
-#           | sha512sum
-#     (or run vcpkg once with SHA512 0 and copy the "Actual hash" it prints).
-#   • The CB repo has no LICENSE file yet; vcpkg_install_copyright (below) needs one. Add a GPL-3.0
-#     LICENSE to CB first (and settle the publishing exception).
-# ────────────────────────────────────────────────────────────────────────────────────────────────
+# NOTE — do NOT publish this registry for third-party consumption yet. Community-Behaviors is public
+# (so the fetch below works) but its LICENSE is All Rights Reserved, not an open-source license. This
+# port is for the copyright holder's own / authorized use until CB is released under GPL-3.0 + a linking
+# exception, at which point set the vcpkg.json license and enable vcpkg_install_copyright below.
+# (SHA512 is GitHub's source archive for the tag; if GitHub ever regenerates it, recompute:
+#   curl -sL .../archive/refs/tags/v0.3.2.tar.gz | sha512sum )
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO Cassieandstuff/Community-Behaviors
     REF  v0.3.2
-    SHA512 0   # <-- PLACEHOLDER, see above
+    SHA512 ded39fe18eae3b9b6f643b9bed5e0e2399b13704381492f7364454e8f5e52aa34a2bca2ea3b973d3a834d26e15966650985bc5ddfc08818e0c977a98631cf5e9
     HEAD_REF main
 )
 
