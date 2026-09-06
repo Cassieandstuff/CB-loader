@@ -3,7 +3,7 @@
   "version": "0.3.2",
   "description": "Community Behaviors load-order resolution + .hky document API (havok-core-free).",
   "homepage": "https://github.com/Cassieandstuff/Community-Behaviors",
-  "license": "GPL-3.0-or-later",
+  "license": null,
   "dependencies": [
     "ryml",
     { "name": "vcpkg-cmake", "host": true },

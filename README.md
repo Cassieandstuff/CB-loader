@@ -12,7 +12,10 @@ Two things must land before this registry works end-to-end:
 1. **Community-Behaviors must be reachable to vcpkg.** It's currently private; `vcpkg_from_github` needs
    the repo public or a `GITHUB_TOKEN`. Until then the portfile's `SHA512` can't be finalized (it's a
    placeholder). See `ports/cb-resolve/portfile.cmake`.
-2. **A LICENSE in CB** (GPL-3.0) for `vcpkg_install_copyright`.
+2. **CB's license.** CB is currently **All Rights Reserved** (unreleased/proprietary), so the port's
+   `license` is `null` and this registry must not be published for third-party consumption yet. On
+   release CB becomes GPL-3.0 (+ a linking exception); at that point set the port `license` to the
+   matching SPDX id and enable `vcpkg_install_copyright`.
 
 Right now the port itself is complete and pinned to CB **v0.3.2** (the first version with install/export
 rules). Once #1/#2 land: fill the SHA512, then `vcpkg x-add-version cb-resolve` to generate the
