@@ -1,6 +1,6 @@
 {
   "name": "cb-resolve",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Community Behaviors load-order resolution + .hky document API (havok-core-free).",
   "homepage": "https://github.com/Cassieandstuff/Community-Behaviors",
   "license": null,
