@@ -1,0 +1,18 @@
+{
+  "name": "cb-api",
+  "version": "0.4.1",
+  "description": "Community Behaviors' public API (havok-core-free): read .hky bundles + resolve/merge a load order, and decode/compile/export animations, animationdata, and skeletons — one header <CB-API.h>, one target cb::CB-API.",
+  "homepage": "https://github.com/Cassieandstuff/Community-Behaviors",
+  "license": null,
+  "dependencies": [
+    "ryml",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}

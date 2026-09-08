@@ -1,5 +1,9 @@
 {
   "default": {
+    "cb-api": {
+      "baseline": "0.4.1",
+      "port-version": 0
+    },
     "cb-resolve": {
       "baseline": "0.3.3",
       "port-version": 0
