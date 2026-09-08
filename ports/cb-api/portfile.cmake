@@ -6,12 +6,12 @@
 # port is for the copyright holder's own / authorized use until CB is released under GPL-3.0 + a linking
 # exception, at which point set the vcpkg.json license and enable vcpkg_install_copyright below.
 # (SHA512 is GitHub's source archive for the tag; if GitHub ever regenerates it, recompute:
-#   curl -sL https://github.com/Cassieandstuff/Community-Behaviors/archive/refs/tags/v0.4.0.tar.gz | sha512sum )
+#   curl -sL https://github.com/Cassieandstuff/Community-Behaviors/archive/refs/tags/v0.4.1.tar.gz | sha512sum )
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO Cassieandstuff/Community-Behaviors
-    REF  v0.4.0
-    SHA512 8e41a6873d595b3f96421a1b9e1ffb96d0a1b76a01f829a63fced4f53e40505cf0d005055085e547cadd80846a44d4db9ff849d4707e8c0a8ed26cf5be713724
+    REF  v0.4.1
+    SHA512 924688071d810e2033f768c5d49f1f0eb1168231928a96b13268d84850344fd9fce1b44dcb4fb1aff534d4cef56e9af4131c109664ec61eaddd1eef48cadf50c
     HEAD_REF main
 )
 
